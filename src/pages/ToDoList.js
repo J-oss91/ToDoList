@@ -1,6 +1,8 @@
 import React,{ useState}  from 'react';
 import ToDoForm from '../components/ToDoForm'
 import ToDoItem from '../components/ToDoItem'
+import CompletedList from './CompletedList';
+
 const ToDoList = () => {
     //see a list of all tasks
     const [todos, setTodos] = useState([]);
@@ -13,6 +15,8 @@ const ToDoList = () => {
         setTodos((prevTodos) => prevTodos.map((todo) =>
         todo.id === todoId ? { ...todo, completed: !todo.completed } : todo));
     };
+
+    
   return (
     <div className='todo-list'>
         <h1>To Do List</h1>
